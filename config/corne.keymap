@@ -99,38 +99,6 @@
                 <&arrow_pag_down_arrow_left_out>;
         };
 
-        vol_bl_inc: vol_bl_inc {
-            compatible = "zmk,behavior-mod-morph";
-            label = "VOL_BL_INC";
-            bindings = <&kp C_VOLUME_UP>, <&kp C_BRIGHTNESS_INC>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        vol_bl_dec: vol_bl_dec {
-            compatible = "zmk,behavior-mod-morph";
-            label = "VOL_BL_DEC";
-            bindings = <&kp C_VOLUME_DOWN>, <&kp C_BRIGHTNESS_DEC>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        vol_bl: vol_bl {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "VOL_BL";
-            #sensor-binding-cells = <0>;
-            bindings = <&vol_bl_inc>, <&vol_bl_dec>;
-        };
-
-        user_scroll: user_scroll {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "USER_SCROLL";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc MOVE_UP>, <&msc MOVE_DOWN>;
-        };
-
         mmv {
             acceleration-exponent = <1>;      // 1
             time-to-max-speed-ms = <900>;    // 40
@@ -324,14 +292,14 @@
 
         Scroll {
             bindings = <
-&none   &none  &none         &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
-&trans  &none  &none         &none  &none  &none    &none  &none  &none  &none  &none  &none  &trans
-&trans  &none  &none         &none  &none  &none    &none  &none  &none  &none  &none  &none  &trans
-               &kp LEFT_ALT  &none  &none  &none    &none  &none  &none  &none
+&none   &none  &none         &none  &none  &none    &none  &none  &none           &none           &none         &none            &none
+&trans  &none  &none         &none  &none  &none    &none  &none  &msc MOVE_LEFT  &msc MOVE_DOWN  &msc MOVE_UP  &msc MOVE_RIGHT  &trans
+&trans  &none  &none         &none  &none  &none    &none  &none  &none           &none           &none         &none            &trans
+               &kp LEFT_ALT  &none  &none  &none    &none  &none  &none           &none
                                                     &none
             >;
 
-            sensor-bindings = <&user_scroll>;
+            sensor-bindings = <&arrow_pag_zoom_encoder>;
             label = "SCROLL";
         };
 
@@ -361,7 +329,7 @@
             sensor-bindings = <&rgb_encoder>;
         };
 
-        layer_6 {
+        Brightness {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
