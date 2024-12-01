@@ -124,6 +124,13 @@
             bindings = <&vol_bl_inc>, <&vol_bl_dec>;
         };
 
+        user_scroll: user_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "USER_SCROLL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc MOVE_UP>, <&msc MOVE_DOWN>;
+        };
+
         mmv {
             acceleration-exponent = <1>;      // 1
             time-to-max-speed-ms = <900>;    // 40
@@ -270,7 +277,7 @@
             >;
 
             label = "DVORAK";
-            sensor-bindings = <&vol_bl>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         Numbers_and_symbols {
@@ -317,14 +324,14 @@
 
         Scroll {
             bindings = <
-&none   &none  &none         &none  &none  &none    &none  &none  &none         &none           &none  &none  &none
-&trans  &none  &none         &none  &none  &none    &none  &none  &msc MOVE_UP  &msc MOVE_DOWN  &none  &none  &trans
-&trans  &none  &none         &none  &none  &none    &none  &none  &none         &none           &none  &none  &trans
-               &kp LEFT_ALT  &none  &none  &none    &none  &none  &none         &none
+&none   &none  &none         &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
+&trans  &none  &none         &none  &none  &none    &none  &none  &none  &none  &none  &none  &trans
+&trans  &none  &none         &none  &none  &none    &none  &none  &none  &none  &none  &none  &trans
+               &kp LEFT_ALT  &none  &none  &none    &none  &none  &none  &none
                                                     &none
             >;
 
-            sensor-bindings = <&arrow_pag_zoom_encoder>;
+            sensor-bindings = <&user_scroll>;
             label = "SCROLL";
         };
 
