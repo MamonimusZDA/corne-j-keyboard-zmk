@@ -102,7 +102,7 @@
         vol_bl_inc: vol_bl_inc {
             compatible = "zmk,behavior-mod-morph";
             label = "VOL_BL_INC";
-            bindings = <&kp C_VOLUME_UP>, <&bl BL_INC>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_BRIGHTNESS_INC>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
@@ -111,7 +111,7 @@
         vol_bl_dec: vol_bl_dec {
             compatible = "zmk,behavior-mod-morph";
             label = "VOL_BL_DEC";
-            bindings = <&kp C_VOLUME_DOWN>, <&bl BL_DEC>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_BRIGHTNESS_DEC>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
@@ -343,28 +343,15 @@
 
         Keyboard_configuration {
             bindings = <
-&none  &none  &none            &none  &none  &none    &rgb_ug RGB_SPI  &none  &none  &none  &none  &none  &none
-&none  &none  &none            &none  &none  &none    &rgb_ug RGB_SPD  &none  &none  &none  &none  &none  &none
-&none  &none  &none            &none  &none  &none    &rgb_ug RGB_EFR  &none  &none  &none  &none  &none  &none
-              &rgb_ug RGB_TOG  &none  &none  &none    &rgb_ug RGB_EFF  &none  &none  &none
+&none  &none  &none            &none  &none  &none    &rgb_ug RGB_SPI  &none       &none       &none       &none  &none  &none
+&none  &none  &none            &none  &none  &none    &rgb_ug RGB_SPD  &none       &none       &none       &none  &none  &none
+&none  &none  &none            &none  &none  &none    &rgb_ug RGB_EFR  &none       &none       &none       &none  &none  &none
+              &rgb_ug RGB_TOG  &none  &none  &none    &rgb_ug RGB_EFF  &bl BL_INC  &bl BL_DEC  &bl BL_TOG
                                                       &trans
             >;
 
             label = "CONFIG";
             sensor-bindings = <&rgb_encoder>;
-        };
-
-        Brightness {
-            bindings = <
-&none  &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none  &none
-              &none  &none  &none  &none    &none   &none  &none  &none
-                                            &trans
-            >;
-
-            label = "BRIGHTNESS";
-            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
     };
 
