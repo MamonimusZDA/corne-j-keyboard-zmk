@@ -40,7 +40,7 @@ layers:
   - V
   - Z
   - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:volume-off$$', h: '6'}
+  - {t: '$$mdi:volume-off$$', h: Brightness}
   - LGUI
   - NUMERIC
   - {t: '$$mdi:keyboard-return$$', h: FN}
@@ -169,10 +169,10 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&msc MOVE_LEFT'
+  - '&msc MOVE_DOWN'
+  - '&msc MOVE_UP'
+  - '&msc MOVE_RIGHT'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -294,7 +294,7 @@ layers:
   - '&bl BL_DEC'
   - '&bl BL_TOG'
   - {t: '$$mdi:transfer$$', type: trans}
-  '6':
+  Brightness:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
