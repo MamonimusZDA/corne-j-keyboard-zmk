@@ -330,11 +330,11 @@
 
         Brightness {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none  &none
-              &none  &none  &none  &none    &none  &none  &none  &none
-                                            &none
+&none  &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none  &none
+              &none  &none  &none  &none    &none   &none  &none  &none
+                                            &trans
             >;
 
             label = "BRIGHTNESS";
